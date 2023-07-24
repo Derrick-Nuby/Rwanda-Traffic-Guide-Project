@@ -19,7 +19,7 @@ function formatText() {
   const formattedText = inputText
     .replace(/[^a-zA-Z]+/g, "-")
     .toLowerCase()
-    .substring(0, 183);
+    .substring(0, 181);
   document.getElementById("formattedText").innerText = "-" + formattedText;
 }
 
