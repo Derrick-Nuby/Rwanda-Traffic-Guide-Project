@@ -1,12 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 24px;
 }
 
 .container {
-    max-width: 400px;
+    max-width: 1200px;
     margin: 20px auto;
-    padding: 10px;
-    border: 1px solid #ccc;
+    padding: 40px;
+    border: 1px solid #4CAF50;
     border-radius: 5px;
 }
 
@@ -16,9 +19,11 @@ label {
 
 input {
     width: 100%;
-    margin-bottom: 10px;
-    padding: 5px;
-    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 5px;
 }
 
 button {
@@ -29,12 +34,13 @@ button {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 20px;
     border-radius: 5px;
     cursor: pointer;
 }
 
 #formattedText {
-    font-size: 16px;
+    font-size: 26px;
     word-break: break-all;
+    cursor: copy;
 }
