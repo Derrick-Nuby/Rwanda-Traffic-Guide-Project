@@ -43,3 +43,9 @@ function copyToClipboard(text) {
   document.execCommand("copy");
   document.body.removeChild(textArea);
 }
+
+function clearAll() {
+  document.getElementById("textInput").value = "";
+  document.getElementById("formattedText").innerText = "";
+  updateCharacterCount();
+}
