@@ -44,3 +44,10 @@ button {
     word-break: break-all;
     cursor: copy;
 }
+
+#characterCount {
+    margin-top: 0px;
+    padding-top: 0px;
+    line-height: .5;
+    font-weight: bold;
+}
