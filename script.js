@@ -19,7 +19,7 @@ function formatText() {
   const formattedText = inputText
     .replace(/[^a-zA-Z]+/g, "-")
     .toLowerCase()
-    .substring(0, 143);
+    .substring(0, 113);
   document.getElementById("formattedText").innerText = "-" + formattedText;
 }
 
@@ -28,7 +28,7 @@ function updateCharacterCount() {
   const characterCountElement = document.getElementById("characterCount");
   characterCountElement.innerText = `Characters: ${inputText.length}`;
 
-  if (inputText.length > 143) {
+  if (inputText.length > 113) {
     characterCountElement.style.color = "red";
   } else {
     characterCountElement.style.color = "initial";
