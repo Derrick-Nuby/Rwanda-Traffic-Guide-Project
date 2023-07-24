@@ -20,7 +20,7 @@ function formatText() {
     .replace(/[^a-zA-Z]+/g, "-")
     .toLowerCase()
     .substring(0, 183);
-  document.getElementById("formattedText").innerText = formattedText;
+  document.getElementById("formattedText").innerText = "-" + formattedText;
 }
 
 function updateCharacterCount() {
