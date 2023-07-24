@@ -28,7 +28,7 @@ function updateCharacterCount() {
   const characterCountElement = document.getElementById("characterCount");
   characterCountElement.innerText = `Characters: ${inputText.length}`;
 
-  if (inputText.length > 183) {
+  if (inputText.length > 143) {
     characterCountElement.style.color = "red";
   } else {
     characterCountElement.style.color = "initial";
