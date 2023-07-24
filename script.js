@@ -17,7 +17,8 @@ document.addEventListener("DOMContentLoaded", function () {
 function formatText() {
   const inputText = document.getElementById("textInput").value;
   const formattedText = inputText
-    .replace(/[^a-zA-Z]+/g, "-")
+    .replace(/\s*\w+\s*\)|/g, "")
+    .replace(/[^a-zA-Z0-9]+/g, "-")
     .toLowerCase()
     .substring(0, 113);
   document.getElementById("formattedText").innerText = "-" + formattedText;
