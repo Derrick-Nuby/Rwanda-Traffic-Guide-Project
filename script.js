@@ -1,3 +1,6 @@
+const main_txt =
+  ". RwandaTrafficGuide.Com Ibibazo N' ibisubizo By' amategeko Y' umuhanda.";
+
 document.addEventListener("DOMContentLoaded", function () {
   const textParagraph = document.getElementById("formattedText");
   const inputElement = document.getElementById("textInput");
@@ -16,12 +19,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function formatText() {
   const inputText = document.getElementById("textInput").value;
-  const formattedText = inputText
-    .replace(/\s*\w+\s*\)|/g, "")
-    .replace(/[^a-zA-Z0-9]+/g, "-")
-    .toLowerCase()
-    .substring(0, 113);
-  document.getElementById("formattedText").innerText = "-" + formattedText;
+
+  const replacedText = inputText
+    .replace(/([b-d]\))/gi, ",")
+    .replace(/([a]\))/gi, " ");
+  const formattedText = replacedText;
+  document.getElementById("formattedText").innerText = formattedText + main_txt;
 }
 
 function updateCharacterCount() {
@@ -43,10 +46,14 @@ function copyToClipboard(text) {
   textArea.select();
   document.execCommand("copy");
   document.body.removeChild(textArea);
+  const outputElement = document.getElementById("formattedText");
+  outputElement.style.color = "#4CAF50";
 }
 
 function clearAll() {
   document.getElementById("textInput").value = "";
   document.getElementById("formattedText").innerText = "";
   updateCharacterCount();
+  const outputElement = document.getElementById("formattedText");
+  outputElement.style.color = "#000000";
 }
