@@ -47,7 +47,7 @@ function copyToClipboard(text) {
   document.execCommand("copy");
   document.body.removeChild(textArea);
   const outputElement = document.getElementById("formattedText");
-  outputElement.style.color = "#4CAF50";
+  outputElement.style.color = "#4CAF57";
 }
 
 function clearAll() {
