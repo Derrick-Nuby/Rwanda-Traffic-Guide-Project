@@ -1,5 +1,5 @@
 const main_txt =
-  ". RwandaTrafficGuide.Com Ibibazo N' ibisubizo By' amategeko Y' umuhanda.";
+  "#RTGQ202-Ibibazo-Nibisubizo-Byamategeko-Yumuhanda-Rwanda-Traffic-Guide-Com-Ibyapa-Icyapa-cyerekana-";
 
 document.addEventListener("DOMContentLoaded", function () {
   const textParagraph = document.getElementById("formattedText");
@@ -19,12 +19,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function formatText() {
   const inputText = document.getElementById("textInput").value;
-
-  const replacedText = inputText
-    .replace(/([b-d]\))/gi, ",")
-    .replace(/([a]\))/gi, " ");
-  const formattedText = replacedText;
-  document.getElementById("formattedText").innerText = formattedText + main_txt;
+  const formattedText = inputText
+    .replace(/[^a-zA-Z]+/g, "-")
+    .replace(/\s*\w+\s*\)|/g, "")
+    .replace(/[^a-zA-Z0-9]+/g, "-")
+    .toLowerCase()
+    .substring(0, 101);
+  document.getElementById("formattedText").innerText = main_txt + formattedText;
 }
 
 function updateCharacterCount() {
@@ -32,7 +33,7 @@ function updateCharacterCount() {
   const characterCountElement = document.getElementById("characterCount");
   characterCountElement.innerText = `Characters: ${inputText.length}`;
 
-  if (inputText.length > 113) {
+  if (inputText.length > 101) {
     characterCountElement.style.color = "red";
   } else {
     characterCountElement.style.color = "initial";
