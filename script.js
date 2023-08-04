@@ -1,5 +1,5 @@
-const main_txt =
-  "#RTGQ202-Ibibazo-Nibisubizo-Byamategeko-Yumuhanda-Rwanda-Traffic-Guide-Com-Ibyapa-Icyapa-cyerekana-";
+// const main_txt =
+//   "#RTGQ202-Ibibazo-Nibisubizo-Byamategeko-Yumuhanda-Rwanda-Traffic-Guide-Com-Ibyapa-Icyapa-cyerekana-";
 
 document.addEventListener("DOMContentLoaded", function () {
   const textParagraph = document.getElementById("formattedText");
@@ -19,13 +19,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function formatText() {
   const inputText = document.getElementById("textInput").value;
+  const numberInput = document.getElementById("numberInput").value;
   const formattedText = inputText
     .replace(/[^a-zA-Z]+/g, "-")
     .replace(/\s*\w+\s*\)|/g, "")
     .replace(/[^a-zA-Z0-9]+/g, "-")
     .toLowerCase()
-    .substring(0, 101);
-  document.getElementById("formattedText").innerText = main_txt + formattedText;
+    .substring(0, 125);
+  const fullText = `#RTGQ${numberInput}-Ibibazo-Nibisubizo-Byamategeko-Yumuhanda-Rwanda-Traffic-Guide-Com-`;
+  const mainText = fullText + formattedText;
+  document.getElementById("formattedText").innerText = mainText;
 }
 
 function updateCharacterCount() {
@@ -33,7 +36,7 @@ function updateCharacterCount() {
   const characterCountElement = document.getElementById("characterCount");
   characterCountElement.innerText = `Characters: ${inputText.length}`;
 
-  if (inputText.length > 101) {
+  if (inputText.length > 125) {
     characterCountElement.style.color = "red";
   } else {
     characterCountElement.style.color = "initial";
